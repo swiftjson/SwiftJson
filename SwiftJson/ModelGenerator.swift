@@ -59,7 +59,7 @@ class ModelGenerator {
                         var cn = self.buildClassName(className, suffix: key as String)
                         childModels += ModelGenerator(json: firstVal as NSDictionary, className: cn, inspectArrays:inspectArrays)
                         type = cn + "[]"
-                        instantiation = cn + "(json:json)"
+                        instantiation = cn + "(json:v as NSDictionary)"
                     }
                 }
                 
