@@ -10,19 +10,18 @@ import Foundation
 
 import Cocoa
 
-
 class ModelGenerator {
     
     var modelOutput:IndentableOutput = IndentableOutput()
     var childModels:ModelGenerator[] = []
     
     var output:String {
-    get {
-        return modelOutput.output
-    }
+        get {
+            return modelOutput.output
+        }
     }
     
-    init(json:NSDictionary, className:String) {
+    init(json:NSDictionary, className:String, inspectArrays:Bool) {
         
         // set up the init function
         var initOutput:IndentableOutput = IndentableOutput()
@@ -43,14 +42,35 @@ class ModelGenerator {
                 type = "NSNumber"
                 initOutput += "\(key) = json.objectForKey(\"\(key)\") as \(type)"
             } else if value.isKindOfClass(NSArray) {
+                
+                var array:NSArray = value as NSArray;
+                var instantiation = "v"
                 type = "AnyObject[]"
+                
+                if inspectArrays && array.count > 0 {
+                    var firstVal:AnyObject = array.objectAtIndex(0)
+                    if firstVal.isKindOfClass(NSString) {
+                        type = "String[]"
+                        instantiation += " as String"
+                    } else if firstVal.isKindOfClass(NSNumber) {
+                        type = "NSNumber[]"
+                        instantiation += " as NSNumber"
+                    } else if firstVal.isKindOfClass(NSDictionary) {
+                        var cn = self.buildClassName(className, suffix: key as String)
+                        childModels += ModelGenerator(json: firstVal as NSDictionary, className: cn, inspectArrays:inspectArrays)
+                        type = cn + "[]"
+                        instantiation = cn + "(json:json)"
+                    }
+                }
+                
                 initOutput += "\(key) = []"
                 (initOutput += "for v:AnyObject in (json.objectForKey(\"\(key)\") as NSArray) {").indent()
-                (initOutput += "\(key) += v").dedent() + "}"
+                (initOutput += "\(key) += \(instantiation)").dedent() + "}"
+                
             } else if value.isKindOfClass(NSDictionary) {
-                var firstChar = (key.uppercaseString as NSString).substringWithRange(NSRange(location:0,length:1))
-                var cn = className + firstChar + (key as NSString).substringFromIndex(1);
-                childModels += ModelGenerator(json: value as NSDictionary, className: cn)
+                
+                var cn = self.buildClassName(className, suffix: key as String)
+                childModels += ModelGenerator(json: value as NSDictionary, className: cn, inspectArrays:inspectArrays)
                 type = cn
                 initOutput += "\(key) = \(type)(json:json.objectForKey(\"\(key)\") as NSDictionary)"
                 
@@ -70,6 +90,11 @@ class ModelGenerator {
             self.modelOutput += child.modelOutput
         }
         
+    }
+    
+    func buildClassName(className:String, suffix:String) -> String {
+        var firstChar = (suffix as NSString).uppercaseString.substringToIndex(1)
+        return className + firstChar + (suffix as NSString).substringFromIndex(1)
     }
     
 }

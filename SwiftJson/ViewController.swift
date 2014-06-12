@@ -13,6 +13,7 @@ class ViewController: NSViewController {
     @IBOutlet var jsonScrollView:NSScrollView
     @IBOutlet var modelScrollView:NSScrollView
     @IBOutlet var classNameTextField:NSTextField
+    @IBOutlet var inspectArrays:NSButton
     
     var jsonTextView : NSTextView {
         get {
@@ -50,7 +51,7 @@ class ViewController: NSViewController {
             
             if jsonDict {
                 
-                let generator:ModelGenerator = ModelGenerator(json:jsonDict! as NSDictionary, className:className)
+                let generator:ModelGenerator = ModelGenerator(json:jsonDict! as NSDictionary, className:className, inspectArrays:inspectArrays.state == 1)
                 
                 modelTextView.textStorage.setAttributedString(NSAttributedString(string: generator.output))
                 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment defaultVersion="101000" identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
     <scenes>
@@ -42,7 +41,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="x8J-nZ-9sP">
-                                            <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="223" height="610"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="448" height="610"/>
@@ -70,7 +69,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Bfo-58-lTM">
-                                            <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="223" height="610"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="442" height="610"/>
@@ -101,7 +100,7 @@
                                     <action selector="onSelectGenerate:" target="XfG-lQ-9wD" id="cbB-LT-nhm"/>
                                 </connections>
                             </button>
-                            <textField appearanceType="aqua" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6m-X6-11s">
+                            <textField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6m-X6-11s">
                                 <rect key="frame" x="20" y="10" width="450" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Model Class Name" drawsBackground="YES" id="m1Q-Hj-QRx">
                                     <font key="font" metaFont="system"/>
@@ -109,25 +108,36 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button appearanceType="aqua" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-Sh-cUx">
+                                <rect key="frame" x="497" y="12" width="185" height="18"/>
+                                <buttonCell key="cell" type="check" title="Inspect first Array Element" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="vrF-Yv-9UA">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="IFp-6N-ZXL" firstAttribute="width" secondItem="RAg-KN-Ywb" secondAttribute="width" id="3Rt-6d-Yq7"/>
                             <constraint firstItem="IFp-6N-ZXL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="ADN-83-iNh"/>
+                            <constraint firstItem="W6m-X6-11s" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="GZj-Md-Qeo"/>
                             <constraint firstItem="IFp-6N-ZXL" firstAttribute="width" secondItem="W6m-X6-11s" secondAttribute="width" id="JF4-d8-hYT"/>
                             <constraint firstAttribute="bottom" secondItem="RAg-KN-Ywb" secondAttribute="bottom" constant="61" id="PDW-SP-j2Y"/>
                             <constraint firstAttribute="trailing" secondItem="8lv-0w-EXU" secondAttribute="trailing" constant="20" id="UtF-zk-Zor"/>
                             <constraint firstAttribute="bottom" secondItem="8lv-0w-EXU" secondAttribute="bottom" constant="11" id="YrJ-RX-0yd"/>
+                            <constraint firstAttribute="bottom" secondItem="hPb-Sh-cUx" secondAttribute="bottom" constant="14" id="YrL-md-KUX"/>
                             <constraint firstAttribute="bottom" secondItem="W6m-X6-11s" secondAttribute="bottom" constant="10" id="aar-VI-0cB"/>
                             <constraint firstAttribute="bottom" secondItem="IFp-6N-ZXL" secondAttribute="bottom" constant="61" id="imL-n1-BsV"/>
                             <constraint firstItem="RAg-KN-Ywb" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="lQ6-1f-pjc"/>
                             <constraint firstItem="IFp-6N-ZXL" firstAttribute="height" secondItem="RAg-KN-Ywb" secondAttribute="height" id="rdq-X3-C1P"/>
                             <constraint firstItem="IFp-6N-ZXL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="suX-uE-1mq"/>
                             <constraint firstItem="RAg-KN-Ywb" firstAttribute="leading" secondItem="IFp-6N-ZXL" secondAttribute="trailing" constant="29" id="tFM-59-FGW"/>
+                            <constraint firstItem="hPb-Sh-cUx" firstAttribute="leading" secondItem="W6m-X6-11s" secondAttribute="trailing" constant="29" id="ub9-3m-dNo"/>
                             <constraint firstAttribute="trailing" secondItem="RAg-KN-Ywb" secondAttribute="trailing" constant="20" id="ujq-VU-LwY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="classNameTextField" destination="W6m-X6-11s" id="u87-Yj-Rew"/>
+                        <outlet property="inspectArrays" destination="hPb-Sh-cUx" id="D5n-HW-JEk"/>
                         <outlet property="jsonScrollView" destination="IFp-6N-ZXL" id="tkg-k6-XVw"/>
                         <outlet property="modelScrollView" destination="RAg-KN-Ywb" id="4Wg-zi-CBA"/>
                         <outlet property="modelTextView" destination="Bfo-58-lTM" id="weq-e5-lUH"/>
