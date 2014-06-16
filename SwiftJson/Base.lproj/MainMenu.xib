@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
     </dependencies>
@@ -669,117 +669,103 @@
         <window title="SwiftJson" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="1007" height="818"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="contentRect" x="335" y="390" width="1000" height="684"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="1007" height="818"/>
+                <rect key="frame" x="0.0" y="0.0" width="1000" height="684"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView ambiguous="YES" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrX-FO-tYm">
-                        <rect key="frame" x="20" y="100" width="481" height="698"/>
-                        <clipView key="contentView" ambiguous="YES" misplaced="YES" id="jDE-H7-O2B">
+                    <scrollView appearanceType="aqua" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwY-gD-DXR">
+                        <rect key="frame" x="20" y="63" width="470" height="601"/>
+                        <clipView key="contentView" ambiguous="YES" misplaced="YES" id="xi0-KK-xFp">
                             <rect key="frame" x="1" y="1" width="223" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="h2A-hE-qne">
+                                <textView ambiguous="YES" importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="s8h-Ea-AcD">
                                     <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="464" height="696"/>
-                                    <size key="maxSize" width="477" height="10000000"/>
-                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="464" height="696"/>
-                                    <size key="maxSize" width="477" height="10000000"/>
+                                    <size key="minSize" width="468" height="599"/>
+                                    <size key="maxSize" width="570" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="468" height="599"/>
+                                    <size key="maxSize" width="570" height="10000000"/>
                                 </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </clipView>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="1x7-jr-q4y"/>
-                        </constraints>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="qpU-xq-TXK">
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="oG3-rp-bug">
                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Tcv-VM-4VR">
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="mFW-Fc-vVn">
                             <rect key="frame" x="224" y="1" width="15" height="133"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <scrollView ambiguous="YES" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lk1-Jd-T2O">
-                        <rect key="frame" x="509" y="100" width="478" height="698"/>
-                        <clipView key="contentView" ambiguous="YES" misplaced="YES" id="0nn-e7-abG">
+                    <scrollView appearanceType="aqua" fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zT4-kg-ckm">
+                        <rect key="frame" x="510" y="63" width="470" height="600"/>
+                        <clipView key="contentView" ambiguous="YES" misplaced="YES" id="smK-PS-Vjt">
                             <rect key="frame" x="1" y="1" width="223" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView ambiguous="YES" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="TBp-ua-iTl">
+                                <textView ambiguous="YES" importsGraphics="NO" richText="NO" findStyle="panel" allowsUndo="YES" usesRuler="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" smartInsertDelete="YES" id="h3N-rz-Tes">
                                     <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="461" height="696"/>
-                                    <size key="maxSize" width="487" height="10000000"/>
-                                    <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="461" height="696"/>
-                                    <size key="maxSize" width="487" height="10000000"/>
+                                    <size key="minSize" width="468" height="598"/>
+                                    <size key="maxSize" width="570" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="468" height="598"/>
+                                    <size key="maxSize" width="570" height="10000000"/>
                                 </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="cD2-OR-jiG">
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="LsQ-hZ-h3H">
                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="S1r-ho-Wkx">
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="JGb-Ws-ak4">
                             <rect key="frame" x="224" y="1" width="15" height="133"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUl-gw-Gnl">
-                        <rect key="frame" x="896" y="13" width="97" height="32"/>
-                        <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Cm-cj-Eln">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                    <tokenField appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nua-Se-Anx">
+                        <rect key="frame" x="20" y="25" width="470" height="22"/>
+                        <tokenFieldCell key="cell" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" allowsEditingTextAttributes="YES" id="7L3-u7-Wig">
                             <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="onSelectGenerate:" target="Gqg-Q5-6b0" id="hkP-rR-Y5V"/>
-                        </connections>
-                    </button>
-                    <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kcm-ig-ITT">
-                        <rect key="frame" x="20" y="20" width="471" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="DbM-mW-m9A"/>
-                        </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Jpl-QR-dGF">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Rb-Kg-l1N">
-                        <rect key="frame" x="497" y="22" width="188" height="18"/>
-                        <buttonCell key="cell" type="check" title="Inspect first Array Element" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="5h7-HG-7zE">
+                        </tokenFieldCell>
+                    </tokenField>
+                    <button appearanceType="aqua" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thI-38-EBr">
+                        <rect key="frame" x="508" y="27" width="62" height="18"/>
+                        <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yz3-Ng-D9t">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
+                    <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tlI-bW-Bk8">
+                        <rect key="frame" x="889" y="19" width="97" height="32"/>
+                        <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hQW-mX-fC2">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onSelectGenerate:" target="Gqg-Q5-6b0" id="CkA-FH-ZXg"/>
+                        </connections>
+                    </button>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="5Rb-Kg-l1N" firstAttribute="leading" secondItem="Kcm-ig-ITT" secondAttribute="trailing" constant="8" id="CKl-v4-hqH"/>
-                    <constraint firstItem="Lk1-Jd-T2O" firstAttribute="leading" secondItem="vrX-FO-tYm" secondAttribute="trailing" constant="8" id="I95-49-4gi"/>
-                    <constraint firstItem="CUl-gw-Gnl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Rb-Kg-l1N" secondAttribute="trailing" constant="20" id="Kyf-12-RU0"/>
-                    <constraint firstItem="vrX-FO-tYm" firstAttribute="width" secondItem="Lk1-Jd-T2O" secondAttribute="width" constant="3" id="SRO-vA-U38"/>
-                    <constraint firstItem="CUl-gw-Gnl" firstAttribute="top" secondItem="Lk1-Jd-T2O" secondAttribute="bottom" constant="59" id="gvS-Nu-ZLL"/>
-                    <constraint firstItem="Kcm-ig-ITT" firstAttribute="top" secondItem="vrX-FO-tYm" secondAttribute="bottom" constant="58" id="ua9-TB-qsD"/>
-                </constraints>
             </view>
-            <point key="canvasLocation" x="851.5" y="671"/>
+            <point key="canvasLocation" x="848" y="604"/>
         </window>
         <customObject id="Gqg-Q5-6b0" customClass="ViewController" customModule="SwiftJson" customModuleProvider="target">
             <connections>
-                <outlet property="classNameTextField" destination="Kcm-ig-ITT" id="E8b-w9-Ceh"/>
-                <outlet property="inspectArrays" destination="5Rb-Kg-l1N" id="cyK-yY-FT6"/>
-                <outlet property="jsonScrollView" destination="vrX-FO-tYm" id="c8u-9O-yDI"/>
-                <outlet property="modelScrollView" destination="Lk1-Jd-T2O" id="hYJ-z3-ioa"/>
+                <outlet property="classNameTextField" destination="Nua-Se-Anx" id="p4v-KX-IHU"/>
+                <outlet property="inspectArrays" destination="thI-38-EBr" id="env-y7-BPC"/>
+                <outlet property="jsonScrollView" destination="hwY-gD-DXR" id="hM3-Pe-Zgm"/>
+                <outlet property="modelScrollView" destination="zT4-kg-ckm" id="Mkg-ZI-3Eo"/>
             </connections>
         </customObject>
     </objects>

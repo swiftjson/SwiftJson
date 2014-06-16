@@ -31,8 +31,20 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"onSelectGenerate:", name: "SELECTED_GENERATE", object: nil)
-        jsonTextView.richText = false
-        modelTextView.richText = false
+            
+        [jsonTextView, modelTextView].map {
+            
+            (tv:NSTextView) -> NSTextView in
+            
+                tv.richText = false
+                tv.automaticQuoteSubstitutionEnabled = false;
+                tv.automaticSpellingCorrectionEnabled = false;
+                tv.automaticDashSubstitutionEnabled = false
+                tv.enabledTextCheckingTypes = 0
+                return tv
+            
+        }
+        
                                     
     }
     
