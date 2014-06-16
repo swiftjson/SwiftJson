@@ -27,8 +27,8 @@ class ViewController: NSViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"onSelectGenerate:", name: "SELECTED_GENERATE", object: nil)
             
