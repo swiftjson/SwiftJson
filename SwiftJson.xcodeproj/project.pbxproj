@@ -11,11 +11,11 @@
 		07859D81194909F100D04588 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859D80194909F100D04588 /* ViewController.swift */; };
 		07859D83194909F100D04588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859D82194909F100D04588 /* AppDelegate.swift */; };
 		07859D85194909F100D04588 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07859D84194909F100D04588 /* Images.xcassets */; };
-		07859D88194909F100D04588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07859D86194909F100D04588 /* Main.storyboard */; };
 		07859D94194909F100D04588 /* SwiftJsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859D93194909F100D04588 /* SwiftJsonTests.swift */; };
 		07859D9E19490A9A00D04588 /* ModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859D9D19490A9A00D04588 /* ModelGenerator.swift */; };
 		07859DA019490AAE00D04588 /* IndentableOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859D9F19490AAE00D04588 /* IndentableOutput.swift */; };
 		07859DA219491CD500D04588 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859DA119491CD500D04588 /* MenuController.swift */; };
+		7E8A8D48194CB1790089D85D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8A8D46194CB1790089D85D /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +35,13 @@
 		07859D80194909F100D04588 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07859D82194909F100D04588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07859D84194909F100D04588 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		07859D87194909F100D04588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07859D8D194909F100D04588 /* SwiftJsonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftJsonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07859D92194909F100D04588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07859D93194909F100D04588 /* SwiftJsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftJsonTests.swift; sourceTree = "<group>"; };
 		07859D9D19490A9A00D04588 /* ModelGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelGenerator.swift; sourceTree = "<group>"; };
 		07859D9F19490AAE00D04588 /* IndentableOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentableOutput.swift; sourceTree = "<group>"; };
 		07859DA119491CD500D04588 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		7E8A8D47194CB1790089D85D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +86,11 @@
 				07859D80194909F100D04588 /* ViewController.swift */,
 				07859D82194909F100D04588 /* AppDelegate.swift */,
 				07859D84194909F100D04588 /* Images.xcassets */,
-				07859D86194909F100D04588 /* Main.storyboard */,
-				07859D7C194909F000D04588 /* Supporting Files */,
+				7E8A8D46194CB1790089D85D /* MainMenu.xib */,
 				07859D9D19490A9A00D04588 /* ModelGenerator.swift */,
 				07859D9F19490AAE00D04588 /* IndentableOutput.swift */,
 				07859DA119491CD500D04588 /* MenuController.swift */,
+				07859D7C194909F000D04588 /* Supporting Files */,
 			);
 			path = SwiftJson;
 			sourceTree = "<group>";
@@ -202,7 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07859D85194909F100D04588 /* Images.xcassets in Resources */,
-				07859D88194909F100D04588 /* Main.storyboard in Resources */,
+				7E8A8D48194CB1790089D85D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,12 +248,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		07859D86194909F100D04588 /* Main.storyboard */ = {
+		7E8A8D46194CB1790089D85D /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				07859D87194909F100D04588 /* Base */,
+				7E8A8D47194CB1790089D85D /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -293,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -330,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -343,6 +343,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SwiftJson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -354,6 +355,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = SwiftJson/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -415,6 +417,7 @@
 				07859D99194909F100D04588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07859D9A194909F100D04588 /* Build configuration list for PBXNativeTarget "SwiftJsonTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +426,7 @@
 				07859D9C194909F100D04588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
