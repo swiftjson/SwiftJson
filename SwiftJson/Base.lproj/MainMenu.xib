@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.17"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6154.21"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -353,14 +353,14 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="977" height="737"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="977" height="737"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView appearanceType="aqua" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwY-gD-DXR">
+                    <scrollView appearanceType="aqua" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwY-gD-DXR">
                         <rect key="frame" x="20" y="63" width="459" height="654"/>
-                        <clipView key="contentView" id="xi0-KK-xFp">
+                        <clipView key="contentView" misplaced="YES" id="xi0-KK-xFp">
                             <rect key="frame" x="1" y="1" width="223" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -368,10 +368,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="223" height="652"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="457" height="651"/>
+                                    <size key="minSize" width="457" height="652"/>
                                     <size key="maxSize" width="772" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="457" height="651"/>
+                                    <size key="minSize" width="457" height="652"/>
                                     <size key="maxSize" width="772" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -386,9 +386,9 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <scrollView appearanceType="aqua" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zT4-kg-ckm">
+                    <scrollView appearanceType="aqua" misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zT4-kg-ckm">
                         <rect key="frame" x="499" y="63" width="458" height="653"/>
-                        <clipView key="contentView" id="smK-PS-Vjt">
+                        <clipView key="contentView" misplaced="YES" id="smK-PS-Vjt">
                             <rect key="frame" x="1" y="1" width="223" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
@@ -396,10 +396,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="223" height="651"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <size key="minSize" width="456" height="650"/>
+                                    <size key="minSize" width="456" height="651"/>
                                     <size key="maxSize" width="772" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="456" height="650"/>
+                                    <size key="minSize" width="456" height="651"/>
                                     <size key="maxSize" width="772" height="10000000"/>
                                 </textView>
                             </subviews>
@@ -414,7 +414,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <button appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="thI-38-EBr">
+                    <button appearanceType="aqua" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thI-38-EBr">
                         <rect key="frame" x="497" y="27" width="183" height="18"/>
                         <buttonCell key="cell" type="check" title="Inspect first array element" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="yz3-Ng-D9t">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -431,7 +431,7 @@
                             <action selector="onSelectGenerate:" target="Gqg-Q5-6b0" id="CkA-FH-ZXg"/>
                         </connections>
                     </button>
-                    <tokenField appearanceType="aqua" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nua-Se-Anx">
+                    <tokenField appearanceType="aqua" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nua-Se-Anx">
                         <rect key="frame" x="20" y="25" width="459" height="22"/>
                         <tokenFieldCell key="cell" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" allowsEditingTextAttributes="YES" id="7L3-u7-Wig">
                             <font key="font" metaFont="system"/>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073B4B53196B7D5000A62AF4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B4B52196B7D5000A62AF4 /* SwiftyJSON.swift */; };
+		073B4B54196B7D5000A62AF4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B4B52196B7D5000A62AF4 /* SwiftyJSON.swift */; };
 		07859D7F194909F100D04588 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859D7E194909F100D04588 /* main.swift */; };
 		07859D81194909F100D04588 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859D80194909F100D04588 /* ViewController.swift */; };
 		07859D83194909F100D04588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07859D82194909F100D04588 /* AppDelegate.swift */; };
@@ -29,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		073B4B52196B7D5000A62AF4 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		07859D79194909F000D04588 /* SwiftJson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftJson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07859D7D194909F100D04588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07859D7E194909F100D04588 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		07859D7B194909F000D04588 /* SwiftJson */ = {
 			isa = PBXGroup;
 			children = (
+				073B4B52196B7D5000A62AF4 /* SwiftyJSON.swift */,
 				07859D80194909F100D04588 /* ViewController.swift */,
 				07859D82194909F100D04588 /* AppDelegate.swift */,
 				07859D84194909F100D04588 /* Images.xcassets */,
@@ -225,6 +229,7 @@
 				07859D7F194909F100D04588 /* main.swift in Sources */,
 				07859DA019490AAE00D04588 /* IndentableOutput.swift in Sources */,
 				07859DA219491CD500D04588 /* MenuController.swift in Sources */,
+				073B4B53196B7D5000A62AF4 /* SwiftyJSON.swift in Sources */,
 				07859D9E19490A9A00D04588 /* ModelGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07859D94194909F100D04588 /* SwiftJsonTests.swift in Sources */,
+				073B4B54196B7D5000A62AF4 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
