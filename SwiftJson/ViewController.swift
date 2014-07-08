@@ -52,18 +52,16 @@ class ViewController: NSViewController {
         
         var className = classNameTextField.stringValue.isEmpty ? "MyClass":classNameTextField.stringValue;
         
-        var json = jsonTextView.textStorage.string
-        var jsonData = (json as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+        var jsonText = jsonTextView.textStorage.string
+        var jsonData = (jsonText as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         
         if jsonData != nil {
             
-            var error: NSError?
+            let json = JSONValue(jsonData)
             
-            let jsonDict:AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &error)
-            
-            if jsonDict {
+            if json {
                 
-                let generator:ModelGenerator = ModelGenerator(json:jsonDict! as NSDictionary, className:className, inspectArrays:inspectArrays.state == 1)
+                let generator:ModelGenerator = ModelGenerator(json:json, className:className, inspectArrays:inspectArrays.state == 1)
                 
                 modelTextView.textStorage.setAttributedString(NSAttributedString(string: generator.output))
                 
