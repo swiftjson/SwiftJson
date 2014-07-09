@@ -14,7 +14,7 @@ import Cocoa
 class ModelGenerator {
     
     var modelOutput:IndentableOutput = IndentableOutput()
-    var childModels:ModelGenerator[] = []
+    var childModels:[ModelGenerator] = []
     
     var output:String {
         get {
@@ -87,24 +87,24 @@ class ModelGenerator {
     func handleArray(array:Array<JSONValue>, key:String, className:String, inspectArrays:Bool, io:IndentableOutput) -> String {
         
         var instantiation = "v"
-        var type = "AnyObject[]"
+        var type = "[AnyObject]"
             
         switch array[0] {
             case .JString(let value):
-                type = "String[]"
+                type = "[String]"
             
             case .JNumber(let value):
-                type = "NSNumber[]"
+                type = "[NSNumber]"
             
             case .JBool(let value):
-                type = "Bool[]"
+                type = "[Bool]"
             
             case .JArray(let arr):
-                type = "JSONValue[]"
+                type = "[JSONValue]"
             case .JObject(let object):
                 var cn = buildClassName(className, suffix: key as String)
                 childModels += ModelGenerator(json: array[0], className: cn, inspectArrays:inspectArrays)
-                type = cn + "[]"
+                type = "[" + cn + "]"
                 instantiation = "\(cn)(json:v)"
             default:
                 type = "AnyObject"
