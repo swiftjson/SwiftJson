@@ -45,7 +45,7 @@ class IndentableOutput {
     }
     
     var output:String = ""
-    var rawOutput:OutputInstruction[] = []
+    var rawOutput:[OutputInstruction] = []
     
     func addLineToOutput(l:String) -> IndentableOutput {
         rawOutput += OutputInstruction(iType: OutputInstructionType.PrintLine, iData: l)
@@ -93,7 +93,7 @@ class IndentableOutput {
     return left
 }
 
-@infix func += (left:IndentableOutput, right:IndentableOutput[]) -> IndentableOutput {
+@infix func += (left:IndentableOutput, right:[IndentableOutput]) -> IndentableOutput {
     for io in right {
         left += io
     }
