@@ -140,7 +140,8 @@ class ModelGenerator {
     }
     
     func buildClassName(className:String, suffix:String) -> String {
-        var firstChar = (suffix as NSString).uppercaseString.substringToIndex(1)
+        let index: String.Index = advance(suffix.startIndex, 1)
+        var firstChar = (suffix as NSString).uppercaseString.substringToIndex(index)
         return className + firstChar + (suffix as NSString).substringFromIndex(1)
     }
     
