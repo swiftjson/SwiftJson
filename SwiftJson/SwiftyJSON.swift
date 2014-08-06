@@ -288,11 +288,11 @@ extension JSONValue: Printable {
                 }
                 index += 1
             }
-            return "[\(objectString)]"
+            return "{\(objectString)}"
         case .JInvalid:
             return "INVALID_JSON_VALUE"
             }
-    }
+  }
     
     func _printableString(indent: String) -> String {
         switch self {
@@ -328,8 +328,8 @@ extension JSONValue: Printable {
     }
 }
 
-extension JSONValue: LogicValue {
-    func getLogicValue() -> Bool {
+extension JSONValue: BooleanType {
+    var boolValue: Bool {
         switch self {
         case .JInvalid:
             return false
