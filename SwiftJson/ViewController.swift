@@ -10,10 +10,10 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    @IBOutlet var jsonScrollView:NSScrollView
-    @IBOutlet var modelScrollView:NSScrollView
-    @IBOutlet var classNameTextField:NSTextField
-    @IBOutlet var inspectArrays:NSButton
+    @IBOutlet var jsonScrollView:NSScrollView!
+    @IBOutlet var modelScrollView:NSScrollView!
+    @IBOutlet var classNameTextField:NSTextField!
+    @IBOutlet var inspectArrays:NSButton!
     
     var jsonTextView : NSTextView {
         get {

@@ -35,7 +35,7 @@ class IndentableOutput {
     set {
         let i:Int = newValue - _indentation;
         _indentation = newValue
-        rawOutput += OutputInstruction(iType: OutputInstructionType.Indent, iData: i)
+        rawOutput.append(OutputInstruction(iType: OutputInstructionType.Indent, iData: i))
     }
     }
     var tabs:String {
@@ -48,7 +48,7 @@ class IndentableOutput {
     var rawOutput:[OutputInstruction] = []
     
     func addLineToOutput(l:String) -> IndentableOutput {
-        rawOutput += OutputInstruction(iType: OutputInstructionType.PrintLine, iData: l)
+        rawOutput.append(OutputInstruction(iType: OutputInstructionType.PrintLine, iData: l))
         output += tabs + l + "\n"
         return self
     }
@@ -65,7 +65,7 @@ class IndentableOutput {
     
 }
 
-@infix func + (left:IndentableOutput, right:IndentableOutput) -> IndentableOutput {
+ func + (left:IndentableOutput, right:IndentableOutput) -> IndentableOutput {
     
     for instruction in right.rawOutput {
         switch instruction.type {
@@ -79,30 +79,30 @@ class IndentableOutput {
     return left
 }
 
-@infix func += (left:IndentableOutput, right:IndentableOutput) -> IndentableOutput {
+ func += (left:IndentableOutput, right:IndentableOutput) -> IndentableOutput {
     return left + right
 }
 
-@infix func + (left:IndentableOutput, right:String) -> IndentableOutput {
+ func + (left:IndentableOutput, right:String) -> IndentableOutput {
     left.addLineToOutput(right)
     return left
 }
 
-@infix func += (left:IndentableOutput, right:String) -> IndentableOutput {
+ func += (left:IndentableOutput, right:String) -> IndentableOutput {
     left.addLineToOutput(right)
     return left
 }
 
-@infix func += (left:IndentableOutput, right:[IndentableOutput]) -> IndentableOutput {
+ func += (left:IndentableOutput, right:[IndentableOutput]) -> IndentableOutput {
     for io in right {
         left += io
     }
     return left
 }
 
-@infix func * (left: String, right: Int) -> String {
+ func * (left: String, right: Int) -> String {
     var output = left
-    for i in 0..right {
+    for i in 0...right {
         output += left
     }
     return output

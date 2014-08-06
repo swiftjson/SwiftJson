@@ -58,7 +58,7 @@ class ModelGenerator {
                             }
                         case .JObject(let object):
                             var cn = self.buildClassName(className, suffix: key as String)
-                            childModels += ModelGenerator(json: value, className: cn, inspectArrays:inspectArrays)
+                            childModels.append(ModelGenerator(json: value, className: cn, inspectArrays:inspectArrays))
                             type = cn
                             initOutput += "\(key) = \(type)(json:json[\"\(key)\"])"
                         default:
@@ -103,7 +103,7 @@ class ModelGenerator {
                 type = "[JSONValue]"
             case .JObject(let object):
                 var cn = buildClassName(className, suffix: key as String)
-                childModels += ModelGenerator(json: array[0], className: cn, inspectArrays:inspectArrays)
+                childModels.append(ModelGenerator(json: array[0], className: cn, inspectArrays:inspectArrays))
                 type = "[" + cn + "]"
                 instantiation = "\(cn)(json:v)"
             default:
