@@ -22,54 +22,56 @@ class ModelGenerator {
         }
     }
     
-    init(json:JSONValue, className:String, inspectArrays:Bool) {
+    init(json:JSON, className:String, inspectArrays:Bool) {
         
         // set up the init function
         var initOutput:IndentableOutput = IndentableOutput()
-        (initOutput += "init(json:JSONValue) {").indent()
+        (initOutput += "init(json:JSON) {").indent()
         
         // model set up
         (modelOutput += "class \(className) {").indent()
         
         // generate everything
-        switch(json) {
-            case .JArray(let array):
-                initOutput += "// initial element was array..."
-            case .JObject(let object):
-                for (key, value) in object {
-                    
-                    var type = ""
-                    
-                    switch value {
-                        case .JString(let value):
-                            type = "String"
-                            buildSetStatement(initOutput, key:key, type:type)
-                        case .JNumber(let value):
-                            type = "NSNumber"
-                            buildSetStatement(initOutput, key:key, type:type)
-                        case .JBool(let value):
-                            type = "Bool"
-                            buildSetStatement(initOutput, key:key, type:type)
-                        case .JArray(let array):
-                            if(inspectArrays && array.count >= 1) {
-                                type = handleArray(array, key: key, className: className, inspectArrays: inspectArrays, io: initOutput)
-                            } else {
-                                initOutput += "\(key) = json[\"\(key)\"]"
-                            }
-                        case .JObject(let object):
-                            var cn = self.buildClassName(className, suffix: key as String)
-                            childModels.append(ModelGenerator(json: value, className: cn, inspectArrays:inspectArrays))
-                            type = cn
-                            initOutput += "\(key) = \(type)(json:json[\"\(key)\"])"
-                        default:
-                            type = "AnyObject"
-                    }
-                    
-                    modelOutput += "var \(key):\(type)"
-                }
-            default:
-                initOutput += "// unexpected type encountered"
+
+        if let array = json.array {
+            initOutput += "// initial element was array..."
         }
+        else if let object = json.dictionary {
+            for (key, value) in object {
+                
+                var type = ""
+                
+                var js : JSON = value as JSON
+                
+                if let val = js.string {
+                    type = "String"
+                    buildSetStatement(initOutput, key: key, type: type)
+                } else if let val = js.number {
+                    type = "NSNumber"
+                    buildSetStatement(initOutput, key: key, type: type)
+                } else if let val = js.bool {
+                    type = "Bool"
+                    buildSetStatement(initOutput, key: key, type: type)
+                } else if let array = js.array {
+                    if(inspectArrays && array.count >= 1) {
+                        type = handleArray(array, key: key, className: className, inspectArrays: inspectArrays, io: initOutput)
+                    } else {
+                        initOutput += "\(key) = json[\"\(key)\"]"
+                    }
+                } else if let object = (value as? JSON)?.object {
+                    var cn = self.buildClassName(className, suffix: key as String)
+                    childModels.append(ModelGenerator(json: value, className: cn, inspectArrays:inspectArrays))
+                    type = cn
+                    initOutput += "\(key) = \(type)(json:json[\"\(key)\"])"
+
+                } else {
+                    type = "AnyObject"
+                }
+                
+                modelOutput += "var \(key):\(type)"
+            }
+        }
+        
         
         // merge the init function and close everything up
         modelOutput += initOutput
@@ -84,36 +86,36 @@ class ModelGenerator {
         
     }
     
-    func handleArray(array:Array<JSONValue>, key:String, className:String, inspectArrays:Bool, io:IndentableOutput) -> String {
+    func handleArray(array:Array<JSON>, key:String, className:String, inspectArrays:Bool, io:IndentableOutput) -> String {
         
         var instantiation = "v"
         var type = "[AnyObject]"
+        
+        var js = (array[0] as JSON);
+        
+        if let val = js.string {
+            type = "String"
             
-        switch array[0] {
-            case .JString(let value):
-                type = "[String]"
+        } else if let val = js.number {
+            type = "NSNumber"
             
-            case .JNumber(let value):
-                type = "[NSNumber]"
-            
-            case .JBool(let value):
-                type = "[Bool]"
-            
-            case .JArray(let arr):
-                type = "[JSONValue]"
-            case .JObject(let object):
-                var cn = buildClassName(className, suffix: key as String)
-                childModels.append(ModelGenerator(json: array[0], className: cn, inspectArrays:inspectArrays))
-                type = "[" + cn + "]"
-                instantiation = "\(cn)(json:v)"
-            default:
-                type = "AnyObject"
+        } else if let val = js.bool {
+            type = "Bool"
+        } else if let array = js.array {
+            type = "[JSON]"
+        } else if let object = (array[0] as? JSON)?.object {
+            var cn = buildClassName(className, suffix: key as String)
+            childModels.append(ModelGenerator(json: array[0], className: cn, inspectArrays:inspectArrays))
+            type = "[" + cn + "]"
+            instantiation = "\(cn)(json:v)"
+        } else {
+            type = "AnyObject"
         }
         
         io += "\(key) = []"
         (io += "if let xs = json[\"\(key)\"].array {").indent()
         (io += "for v in xs {").indent()
-        (io += "\(key) += \(instantiation)").dedent() + "}"
+        (io += "\(key).append(\(instantiation))").dedent() + "}"
         io.dedent() += "}"
         
         return type
@@ -121,21 +123,27 @@ class ModelGenerator {
     
     func buildSetStatement(io:IndentableOutput, key:String, type:String) {
         
-        let optionTypeMap = [
+        let optionTypeMap : [String: String] = [
             "Bool": "bool",
             "NSNumber": "number",
             "String": "string"
         ]
         
-        let optionDefaultValueMap = [
+        let optionDefaultValueMap : [String : String] = [
             "Bool": "false",
             "NSNumber": "0",
             "String": "\"\""
         ]
         
-        (io += "if let value = json[\"\(key)\"].\(optionTypeMap[type]) {").indent()
+        let typeMap : String = (optionTypeMap[type] as! String?)!;
+        let defaultValueMap : String = (optionDefaultValueMap[type] as! String?)!;
+        
+        
+        (io += "if let value = json[\"\(key)\"].\(typeMap) {").indent()
+        
         (((io += "\(key) = value").dedent()) += "} else {").indent()
-        (io += "\(key) = \(optionDefaultValueMap[type])").dedent() += "}"
+        
+        (io += "\(key) = \(defaultValueMap)").dedent() += "}"
         
     }
     
