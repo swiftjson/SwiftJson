@@ -70,9 +70,9 @@ class IndentableOutput {
     for instruction in right.rawOutput {
         switch instruction.type {
         case OutputInstructionType.Indent:
-            left.indentation += instruction.data as Int
+            left.indentation += instruction.data as! Int
         case OutputInstructionType.PrintLine:
-            left.addLineToOutput(instruction.data as String)
+            left.addLineToOutput(instruction.data as! String)
         }
     }
     
